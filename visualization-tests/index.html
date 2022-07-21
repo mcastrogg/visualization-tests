@@ -1,7 +1,16 @@
 <html>
 
 <head>
+    <link rel="preload" as="image" href="http://tali.gg-staging.s3-website.us-east-2.amazonaws.com/bg%202.png">
     <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script>
+    <script>
+        WebFont.load({
+            google: {
+                families: ['Lexend Deca', 'Lexend']
+            }
+        });
+    </script>
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -10,9 +19,13 @@
     <h1>Visualizations</h1>
 
     <h3>Line Chart</h3>
+    <!-- <img src="bg 2.png"> -->
     <script type="module" src="main.js"></script>
     <div id="line_chart"></div>
     <!-- <div id="ttDiv"></div> -->
+    <!-- <div id="Test">
+        400
+    </div> -->
 
 
 

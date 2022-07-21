@@ -1,12 +1,58 @@
 div.toolTip {
     position: absolute;
-    text-align: center;
-    width: 60px;
-    height: 28px;
+    /* text-align: center; */
+    left: -2000px;
+    width: 124px;
+    height: 52px;
     padding: 2px;
-    font: 12px sans-serif;
-    background: lightsteelblue;
-    border: 0px;
-    border-radius: 8px;
+    box-sizing: border-box;
+    /* background: linear-gradient(89.99deg, rgba(254, 179, 56, 0.25) 0.01%, rgba(255, 255, 255, 0) 100%); */
+    border-radius: 4px;
     pointer-events: none;
+}
+
+div.hover_rect {
+    position: absolute;
+    /* text-align: center; */
+    left: -2000px;
+    width: 16px; 
+    height: 100px;
+    padding: 2px;
+    box-sizing: border-box;
+    /* background: linear-gradient(89.99deg, rgba(254, 179, 56, 0.25) 0.01%, rgba(255, 255, 255, 0) 100%); */
+    /* border-radius: 4px; */
+    pointer-events: none;
+}
+
+span.toolTip {
+    position: absolute;
+    /* width: 30px;
+    height: 10px; */
+    font-family: 'Lexend';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 10px;
+    
+    /* identical to box height */
+    display: flex;
+    /* align-items: center; */
+}
+
+#Test
+{
+    position: absolute;
+    visibility: hidden;
+    height: auto;
+    width: auto;
+    white-space: nowrap; /* Thanks to Herb Caudill comment */
+    font-family: 'Lexend';
+}
+
+#orange-area-gradient{
+    opacity: .1;
+}
+
+#purple-area-gradient{
+    opacity: .5;
 }
