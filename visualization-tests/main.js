@@ -98,6 +98,60 @@ function line_chart(data) {
         .attr("height", "100%")
         .attr("fill", "url(#bg)");
     
+    // Add Team Icons
+    const yPadding = 10;
+    const teamIconWidth = 30;
+    const teamIconHeight = 30;
+
+    const teamIconHoverWidth = 113;
+    const teamIconHoverHeight = 20;
+
+    let teamIconOrangeRect = svg.append('rect')
+        .attr('class', 'teamIconHover')
+        .attr('width', teamIconHoverWidth)
+        .attr('height', teamIconHoverHeight)
+        .attr('x', chart_width - teamIconHoverWidth + (teamIconWidth/2))
+        .attr('y', yPadding + (teamIconHoverHeight/4))
+        .attr('fill', 'rgba(255, 137, 28, 1)')
+        .style('opacity', 0)
+
+    let teamIconPurpleRect = svg.append('rect')
+        .attr('class', 'teamIconHover')
+        .attr('width', teamIconHoverWidth)
+        .attr('height', teamIconHoverHeight)
+        .attr('x', chart_width - teamIconHoverWidth + (teamIconWidth/2))
+        .attr('y', + teamIconHeight + (yPadding/2) + (teamIconHoverHeight))
+        .attr('fill', 'rgba(147, 50, 255, 1)')
+        .attr('opacity', 0);
+
+    svg.append("image")
+        .attr("id", "orangeTeamIcon")
+        .attr('xlink:href', 'http://tali.gg-staging.s3-website.us-east-2.amazonaws.com/OrangeTeamIcon.svg')
+        .attr('x', chart_width)
+        .attr('y', yPadding)
+        .attr('width', teamIconWidth)
+        .attr('height', teamIconHeight)
+        .on("mouseover", function(e, d) {
+            teamIconOrangeRect.style('opacity', 100)
+        })
+        .on("mouseout", function(e, d) {
+            teamIconOrangeRect.style('opacity', 0)
+        });
+    
+    svg.append("image")
+        .attr("id", "orangeTeamIcon")
+        .attr('xlink:href', 'http://tali.gg-staging.s3-website.us-east-2.amazonaws.com/PurpleTeamIcon.svg')
+        .attr('x', chart_width)
+        .attr('y', teamIconHeight + (yPadding * 2))
+        .attr('width', teamIconWidth)
+        .attr('height', teamIconHeight)
+        .on("mouseover", function(e, d) {
+            teamIconPurpleRect.attr('opacity', 100)
+        })
+        .on("mouseout", function(e, d) {
+            teamIconPurpleRect.attr('opacity', 0)
+        });
+    
     
     function drawOutlineOfEntireSVG(){
         svg.append("rect")
@@ -143,6 +197,9 @@ function line_chart(data) {
         // Domain is for y is minY and maxY
         .domain([testMin, testMax])
         .range([chart_height, margin.top]);
+    
+    
+
 
 
     function drawAxises(x, y){
@@ -287,6 +344,7 @@ function line_chart(data) {
         .attr("class", "hover_rect")
         .style("opacity", 100)
         .style("background", "linear-gradient(179.96deg, #BC96E6 0.03%, rgba(255, 255, 255, 0) 54.54%)");
+    
 
     u.addToolTips(pData, orangeToolTip, purpleToolTip );
     

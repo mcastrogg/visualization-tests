@@ -9,7 +9,10 @@ div.toolTip {
     /* background: linear-gradient(89.99deg, rgba(254, 179, 56, 0.25) 0.01%, rgba(255, 255, 255, 0) 100%); */
     border-radius: 4px;
     pointer-events: none;
+
+    align-items: center;
 }
+
 
 div.hover_rect {
     position: absolute;
@@ -26,17 +29,14 @@ div.hover_rect {
 
 span.toolTip {
     position: absolute;
-    /* width: 30px;
-    height: 10px; */
     font-family: 'Lexend';
     font-style: normal;
     font-weight: 400;
     font-size: 12px;
     line-height: 10px;
-    
-    /* identical to box height */
+    left: calc(25%);
+    bottom: calc(30%);
     display: flex;
-    /* align-items: center; */
 }
 
 #Test
